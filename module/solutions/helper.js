@@ -869,7 +869,7 @@ module.exports = class SolutionsHelper {
 				scopeData['entityType'] = Object.keys(_.omit(scopeData, ['roles'])).join(',')
 
 				// Assign the entityType string to the entityType field in updateObject
-				updateObject['$set']['entityType'] = scopeData.entityType
+				// updateObject['$set']['entityType'] = scopeData.entityType
         // }
         //  else {
         //   currentSolutionScope = scopeData;
@@ -3390,6 +3390,7 @@ module.exports = class SolutionsHelper {
             $arrayElemAt: ['$totalCount.count', 0],
           },
         };
+        console.log(matchQuery);
         let solutionDocuments = await solutionsQueries.getAggregate([
           { $match: matchQuery },
           {
