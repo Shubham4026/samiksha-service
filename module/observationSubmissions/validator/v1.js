@@ -37,8 +37,8 @@ module.exports = (req) => {
         .checkQuery('entityId')
         .exists()
         .withMessage('required entity id')
-        .isMongoId()
-        .withMessage('Invalid entity id');
+        // .isMongoId()
+        // .withMessage('Invalid entity id');
     },
 
     status: function () {
