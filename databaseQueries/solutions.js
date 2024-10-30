@@ -39,6 +39,9 @@ module.exports = class Solutions {
             projection[field] = 0;
           });
         }
+        require('fs').writeFileSync('queryObj.json',JSON.stringify({
+          queryObject, projection
+        }))
         let solutionsDoc = await database.models.solutions.find(queryObject, projection).lean();
 
         return resolve(solutionsDoc);
