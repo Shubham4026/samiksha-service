@@ -1158,6 +1158,32 @@
             ]
         },
         {
+            "sourceRoute": "/survey/v1/observations/targetedEntity",
+            "type": "POST",
+            "priority": "MUST_HAVE",
+            "inSequence": false,
+            "orchestrated": false,
+            "targetPackages": [
+                {
+                    "basePackageName": "survey",
+                    "packageName": "elevate-survey"
+                }
+            ]
+        },
+        {
+            "sourceRoute": "/survey/v1/observations/targetedEntity/:id",
+            "type": "POST",
+            "priority": "MUST_HAVE",
+            "inSequence": false,
+            "orchestrated": false,
+            "targetPackages": [
+                {
+                    "basePackageName": "survey",
+                    "packageName": "elevate-survey"
+                }
+            ]
+        },
+        {
             "sourceRoute": "/survey/v1/observationSubmissions/update",
             "type": "POST",
             "priority": "MUST_HAVE",
@@ -1184,6 +1210,32 @@
             ]
         },
         {
+            "sourceRoute": "/survey/v1/observationSubmissions/update",
+            "type": "DELETE",
+            "priority": "MUST_HAVE",
+            "inSequence": false,
+            "orchestrated": false,
+            "targetPackages": [
+                {
+                    "basePackageName": "survey",
+                    "packageName": "elevate-survey"
+                }
+            ]
+        },
+        {
+            "sourceRoute": "/survey/v1/observationSubmissions/update/:id",
+            "type": "DELETE",
+            "priority": "MUST_HAVE",
+            "inSequence": false,
+            "orchestrated": false,
+            "targetPackages": [
+                {
+                    "basePackageName": "survey",
+                    "packageName": "elevate-survey"
+                }
+            ]
+        },
+        {
             "sourceRoute": "/survey/v1/observationSubmissions/list",
             "type": "POST",
             "priority": "MUST_HAVE",
@@ -1198,6 +1250,19 @@
         },
         {
             "sourceRoute": "/survey/v1/observationSubmissions/list/:id",
+            "type": "POST",
+            "priority": "MUST_HAVE",
+            "inSequence": false,
+            "orchestrated": false,
+            "targetPackages": [
+                {
+                    "basePackageName": "survey",
+                    "packageName": "elevate-survey"
+                }
+            ]
+        },
+        {
+            "sourceRoute": "/survey/v1/observationSubmissions/solutionList",
             "type": "POST",
             "priority": "MUST_HAVE",
             "inSequence": false,
