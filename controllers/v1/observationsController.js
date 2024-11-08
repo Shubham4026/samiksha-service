@@ -1029,7 +1029,7 @@ module.exports = class Observations extends Abstract {
           }
         }
 
-        const parsedAssessment = await assessmentsHelper.parseQuestions(
+        const parsedAssessment = await assessmentsHelper.parseQuestionsV2(
           Object.values(evidenceMethodArray),
           entityDocumentQuestionGroup,
           submissionDoc.result.evidences,
