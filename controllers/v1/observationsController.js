@@ -919,6 +919,7 @@ module.exports = class Observations extends Abstract {
         assessment.description = solutionDocument.description;
         assessment.externalId = solutionDocument.externalId;
         assessment.pageHeading = solutionDocument.pageHeading;
+        assessment.endDate = solutionDocument.endDate;
 
         let criteriaId = new Array();
         let criteriaObject = {};
