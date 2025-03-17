@@ -863,7 +863,7 @@ module.exports = class SolutionsHelper {
 					.reduce((acc, key) => acc.concat(scopeData[key]), [])
 
 				// Assign the entities array to the entities field in updateObject
-				updateObject.$set.entities = entities
+				// updateObject.$set.entities = entities
 
 				// Create a comma-separated string of all keys in scopeData except 'roles'
 				scopeData['entityType'] = Object.keys(_.omit(scopeData, ['roles'])).join(',')
