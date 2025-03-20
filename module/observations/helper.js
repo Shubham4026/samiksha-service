@@ -1851,7 +1851,7 @@ module.exports = class ObservationsHelper {
           let observationData = await this.observationDocuments(
             {
               solutionId: solutionId,
-              createdBy: userId,
+              // createdBy: userId,
             },
             ['_id'],
           );
