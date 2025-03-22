@@ -519,12 +519,11 @@ module.exports = class Observations extends v1Observation {
         let observationDocument = await database.models.observations
           .findOne({
             _id: req.params._id,
-            createdBy: req.userDetails.userId,
+            // createdBy: req.userDetails.userId,
             status: { $ne: 'inactive' },
-            entities: ObjectId(req.query.entityId),
+            // entities: ObjectId(req.query.entityId),
           })
           .lean();
-
         if (!observationDocument) {
           return resolve({
             status: httpStatusCode.bad_request.status,

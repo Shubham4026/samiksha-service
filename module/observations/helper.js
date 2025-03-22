@@ -2069,7 +2069,7 @@ module.exports = class ObservationsHelper {
         let observationDocument = await this.observationDocuments(
           {
             _id: observationId,
-            createdBy: userId,
+            // createdBy: userId,
             status: { $ne: 'inactive' },
           },
           ['entityTypeId', 'status'],
@@ -2172,7 +2172,7 @@ module.exports = class ObservationsHelper {
 
       let observationDocument = await this.observationDocuments({
         _id: req.params._id,
-        createdBy: req.userDetails.userId,
+        // createdBy: req.userDetails.userId,
         status: { $ne: 'inactive' },
         entities: { '$in': [req.query.entityId]}
       });
