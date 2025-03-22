@@ -2294,7 +2294,7 @@ module.exports = class ObservationsHelper {
       lastSubmissionNumber = lastSubmissionForObservationEntity.result + 1;
   
       let submissionDocument = {
-        entityId: entityDocument._id,
+        entityId: entityDocument._id || req.query.entityId ,
         entityExternalId: entityDocument.metaInformation.externalId ? entityDocument.metaInformation.externalId : '',
         entityInformation: entityDocument.metaInformation,
         solutionId: solutionDocument._id,
