@@ -508,9 +508,9 @@ module.exports = class ObservationsHelper {
           observationId = new ObjectId(observationId);
         }
 
-        if (typeof entityId == 'string') {
-          entityId = new ObjectId(entityId);
-        }
+        // if (typeof entityId == 'string') {
+        //   entityId = new ObjectId(entityId);
+        // }
 
         let submissionDocument = await database.models.observationSubmissions
           .find(
