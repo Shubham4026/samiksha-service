@@ -4,6 +4,15 @@ require('dotenv').config();
 const express = require('express');
 let app = express();
 
+// Global unhandled promise rejection handler - prevents app crashes
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('Unhandled Promise Rejection at:', promise);
+  console.error('Reason:', reason);
+  if (reason && reason.stack) {
+    console.error('Stack trace:', reason.stack);
+  }
+});
+
 // Health check
 require('./healthCheck')(app);
 

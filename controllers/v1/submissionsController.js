@@ -219,9 +219,13 @@ module.exports = class Submission extends Abstract {
         let response = await submissionsHelper.createEvidencesInSubmission(req, 'submissions', false);
 
         if (response.result.status && response.result.status === 'completed') {
-          await submissionsHelper.pushCompletedSubmissionForReporting(req.params._id);
+          submissionsHelper.pushCompletedSubmissionForReporting(req.params._id).catch((error) => {
+            console.error('Error pushing completed submission for reporting:', error);
+          });
         } else if (response.result.status && response.result.status === 'ratingPending') {
-          await submissionsHelper.pushSubmissionToQueueForRating(req.params._id);
+          submissionsHelper.pushSubmissionToQueueForRating(req.params._id).catch((error) => {
+            console.error('Error pushing submission to queue for rating:', error);
+          });
         }
 
         let appInformation = {};
